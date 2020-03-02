@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\richardmu\\source\\repos\\RichardUM\\pilotAPI\\PilotAPI\\PilotAPI\\PilotAPI.csproj": {}
+    "C:\\Source\\Product.Api\\PilotAPI\\PilotAPI\\PilotAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\richardmu\\source\\repos\\RichardUM\\pilotAPI\\PilotAPI\\PilotAPI\\PilotAPI.csproj": {
+    "C:\\Source\\Product.Api\\PilotAPI\\PilotAPI\\PilotAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\richardmu\\source\\repos\\RichardUM\\pilotAPI\\PilotAPI\\PilotAPI\\PilotAPI.csproj",
+        "projectUniqueName": "C:\\Source\\Product.Api\\PilotAPI\\PilotAPI\\PilotAPI.csproj",
         "projectName": "PilotAPI",
-        "projectPath": "C:\\Users\\richardmu\\source\\repos\\RichardUM\\pilotAPI\\PilotAPI\\PilotAPI\\PilotAPI.csproj",
+        "projectPath": "C:\\Source\\Product.Api\\PilotAPI\\PilotAPI\\PilotAPI.csproj",
         "packagesPath": "C:\\Users\\richardmu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\richardmu\\source\\repos\\RichardUM\\pilotAPI\\PilotAPI\\PilotAPI\\obj\\",
+        "outputPath": "C:\\Source\\Product.Api\\PilotAPI\\PilotAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\richardmu\\AppData\\Roaming\\NuGet\\NuGet.Config",
