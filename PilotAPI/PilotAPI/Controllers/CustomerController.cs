@@ -8,6 +8,7 @@ using PilotAPI.Model;
 
 namespace PilotAPI.Controllers
 {
+    [ApiVersion("1.0")]
     [Route("api/Customer")]
     [ApiController]
     public class CustomerController : ControllerBase

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +29,8 @@ namespace PilotAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddXmlSerializerFormatters();
+            services.AddApiVersioning();
+            //services.AddApiVersioning(o => o.ApiVersionReader = new MediaTypeApiVersionReader());
             services.AddDbContext<ProductDbContext>(option => option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ProductDB;"));
         }
 
