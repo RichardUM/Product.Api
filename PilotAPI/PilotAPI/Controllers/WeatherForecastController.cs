@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace PilotAPI.Controllers
 {
+    [ApiVersion("1.0")]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase

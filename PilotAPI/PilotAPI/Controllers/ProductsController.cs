@@ -8,6 +8,7 @@ using PilotAPI.Model;
 
 namespace PilotAPI.Controllers
 {
+    [ApiVersion("1.0")]
     [Route("api/Products")]
     [ApiController]
     public class ProductsController : ControllerBase
