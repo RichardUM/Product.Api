@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PilotAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using PilotAPI.Services;
 
 namespace PilotAPI
 {
@@ -32,6 +33,9 @@ namespace PilotAPI
             services.AddApiVersioning();
             //services.AddApiVersioning(o => o.ApiVersionReader = new MediaTypeApiVersionReader());
             services.AddDbContext<ProductDbContext>(option => option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ProductDB;"));
+
+            //Responsible for resolving dependency and object creation
+            services.AddScoped<IProducts, ProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
