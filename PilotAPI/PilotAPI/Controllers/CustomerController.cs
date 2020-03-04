@@ -20,12 +20,15 @@ namespace PilotAPI.Controllers
             new Customers(){CustId = 2,CustName = "Jam",CustEmail = "shs3@d.com",CustNo = "0689766552"}
         };
 
+        [HttpGet]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public IEnumerable<Customers> Get()
         {
             return _customer;
         }
 
         [HttpPost]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public IActionResult Post([FromBody] Customers cust)
         {
             if (ModelState.IsValid)

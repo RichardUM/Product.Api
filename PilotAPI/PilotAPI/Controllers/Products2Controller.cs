@@ -24,6 +24,7 @@ namespace PilotAPI.Controllers
 
         // GET: api/Products2
         [HttpGet]
+        [Route("sortPrice")]
         public IEnumerable<Product> Get(String sortPrice)
         {
             IQueryable<Product> products;
@@ -65,6 +66,7 @@ namespace PilotAPI.Controllers
 
         // GET: api/Products2/5
         [HttpGet("{id}", Name = "Get")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public IActionResult  Get(int id)
         {
             var product = productDbContext.Products.SingleOrDefault(m => m.ProductId == id);
@@ -78,6 +80,7 @@ namespace PilotAPI.Controllers
 
         // POST: api/Products2
         [HttpPost]
+        [Route("post")]
         public IActionResult Post([FromBody] Product product)
         {
             if (!TryValidateModel(product))
@@ -91,7 +94,9 @@ namespace PilotAPI.Controllers
         }
 
         // PUT: api/Products2/5
-        [HttpPut("{id}")]
+        [HttpPut]
+        [Route("put2/{id}")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public IActionResult Put(int id, [FromBody] Product product)
         {
             if (!TryValidateModel(product))
@@ -120,7 +125,9 @@ namespace PilotAPI.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
+        [HttpDelete]
+        [Route("test/{id}")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public IActionResult Delete(int id)
         {
             var product = productDbContext.Products.SingleOrDefault(m => m.ProductId == id);
