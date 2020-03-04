@@ -80,7 +80,7 @@ namespace PilotAPI.Controllers
 
         // POST: api/Products2
         [HttpPost]
-        [Route("post")]
+        [Route("post2")]
         public IActionResult Post([FromBody] Product product)
         {
             if (!TryValidateModel(product))

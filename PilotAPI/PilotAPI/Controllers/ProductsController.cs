@@ -30,7 +30,7 @@ namespace PilotAPI.Controllers
 
         [HttpPost]
         [Route("post")]
-        [ApiExplorerSettings(IgnoreApi = true)]
+        //[ApiExplorerSettings(IgnoreApi = true)]
         public IActionResult AddProduct([FromBody]Product prod)
         {
             _products.Add(prod);
@@ -39,7 +39,7 @@ namespace PilotAPI.Controllers
 
         [HttpPut]
         [Route("put/{id}")]
-        [ApiExplorerSettings(IgnoreApi = true)]
+        //[ApiExplorerSettings(IgnoreApi = true)]
         public void PutProduct(int id, [FromBody] Product prod)
         {
             _products[id] = prod;
@@ -47,7 +47,7 @@ namespace PilotAPI.Controllers
 
         [HttpDelete]
         [Route("del/{id}")]
-        [ApiExplorerSettings(IgnoreApi = true)]
+        //[ApiExplorerSettings(IgnoreApi = true)]
         public void Delete(int id)
         {
             _products.RemoveAt(id);
