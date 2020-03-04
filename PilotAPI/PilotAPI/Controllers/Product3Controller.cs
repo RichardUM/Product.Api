@@ -31,7 +31,7 @@ namespace PilotAPI.Controllers
         }
 
         // GET: api/Products2/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "Get3")]
         public IActionResult GetProduct(int id)
         {
             var product = productDbRepo.GetProduct(id);
