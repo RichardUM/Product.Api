@@ -39,7 +39,7 @@ namespace PilotAPI.Services
 
         public void DeleteProduct(int id)
         {
-            var product = productDbContext.Products.Find( id);
+            var product = productDbContext.Products.Find(id);
             productDbContext.Products.Remove(product);
             productDbContext.SaveChanges(true);
         }
