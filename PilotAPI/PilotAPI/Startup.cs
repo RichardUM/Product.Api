@@ -13,7 +13,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PilotAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using PilotAPI.Services;
+using Swashbuckle.AspNetCore;
 
 namespace PilotAPI
 {
@@ -30,12 +32,15 @@ namespace PilotAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddXmlSerializerFormatters();
-            services.AddApiVersioning();
+            //services.AddApiVersioning();
             //services.AddApiVersioning(o => o.ApiVersionReader = new MediaTypeApiVersionReader());
             services.AddDbContext<ProductDbContext>(option => option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ProductDB;"));
 
             //Responsible for resolving dependency and object creation
             services.AddScoped<IProducts, ProductRepository>();
+
+            //Resolve dependencies
+            services.AddSwaggerGen(c => c.SwaggerDoc("myApi", new OpenApiInfo {Title = "Products API",Version = "2.0"}));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +50,9 @@ namespace PilotAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/myApi/swagger.json", "Api for Products"));
 
             app.UseHttpsRedirection();
 

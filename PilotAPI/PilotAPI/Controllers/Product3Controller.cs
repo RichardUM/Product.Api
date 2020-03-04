@@ -25,14 +25,14 @@ namespace PilotAPI.Controllers
         }
         // GET: api/Product3
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public IEnumerable<Product> GetProducts()
         {
             return productDbRepo.GetProducts();
         }
 
         // GET: api/Products2/5
         [HttpGet("{id}", Name = "Get")]
-        public IActionResult Get(int id)
+        public IActionResult GetProduct(int id)
         {
             var product = productDbRepo.GetProduct(id);
             if (product == null)

@@ -22,25 +22,32 @@ namespace PilotAPI.Controllers
         };
 
         [HttpGet]
+        [Route("getall")]
         public IActionResult GetProduct()
         {
             return Ok(_products);
         }
 
         [HttpPost]
+        [Route("post")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public IActionResult AddProduct([FromBody]Product prod)
         {
             _products.Add(prod);
             return StatusCode(StatusCodes.Status201Created);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
+        [Route("put/{id}")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public void PutProduct(int id, [FromBody] Product prod)
         {
             _products[id] = prod;
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
+        [Route("del/{id}")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public void Delete(int id)
         {
             _products.RemoveAt(id);
