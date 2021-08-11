@@ -23,13 +23,22 @@ namespace PilotAPI.Controllers
         {
             productDbRepo = _productDbRepo;
         }
+
+        /// <summary>
+        /// Gets all Products 
+        /// </summary>
+        /// <returns>List of Products</returns>
         // GET: api/Product3
         [HttpGet]
         public IEnumerable<Product> GetProducts()
         {
             return productDbRepo.GetProducts();
         }
-
+        /// <summary>
+        /// Get a specific Product
+        /// </summary>
+        /// <param name="id">The product ID as input</param>
+        /// <returns>One Product</returns>
         // GET: api/Products2/5
         [HttpGet("{id}", Name = "Get3")]
         public IActionResult GetProduct(int id)
